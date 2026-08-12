@@ -11,7 +11,7 @@ import ScrollProgress from "@/components/motion/ScrollProgress";
 
 const mulish = Mulish({ subsets: ["latin"], variable: "--font-mulish", display: "swap" });
 const jetbrains = JetBrains_Mono({ subsets: ["latin"], variable: "--font-jetbrains", display: "swap", preload: false });
-const hero = Barlow_Condensed({ subsets: ["latin"], variable: "--font-barlow", display: "swap", weight: ["700", "800", "900"] });
+const hero = Barlow_Condensed({ subsets: ["latin"], variable: "--font-barlow", display: "optional", weight: ["700", "800", "900"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -70,7 +70,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${mulish.variable} ${jetbrains.variable} ${hero.variable}`}>
       <head>
-        <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM-readable site summary" />
+        <link rel="alternate" type="text/markdown" href="/llms.txt" title="LLM-readable site summary" />
       </head>
       <body className="min-h-screen bg-ink text-white antialiased">
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
