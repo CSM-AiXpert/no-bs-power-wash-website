@@ -28,13 +28,13 @@ export const metadata: Metadata = {
     url: site.url,
     type: "website",
     locale: "en_US",
-    images: [{ url: "/social-share.jpg", width: 1200, height: 630, alt: "No BS Power Wash: No Games. Just Clean." }],
+    images: [{ url: "/social-share.webp", width: 1200, height: 630, alt: "No BS Power Wash: No Games. Just Clean." }],
   },
   twitter: {
     card: "summary_large_image",
     title: "No BS Power Wash | No Games. Just Clean.",
     description: "Pressure washing and soft washing across the South Carolina Lowcountry.",
-    images: ["/social-share.jpg"],
+    images: ["/social-share.webp"],
   },
 };
 
@@ -50,7 +50,7 @@ const localBusinessSchema = {
   founder: { "@type": "Person", name: site.owner },
   areaServed: site.areas.map((a) => ({ "@type": "City", name: a })),
   slogan: site.tagline,
-  image: `${site.url}/brand/nobs-logo.png`,
+  image: `${site.url}/brand/nobs-logo.webp`,
   priceRange: "$$",
 };
 

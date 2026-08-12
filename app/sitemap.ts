@@ -13,7 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   return [
-    { url: base, changeFrequency: "monthly", priority: 1, images: [`${base}/brand/nobs-logo.png`] },
+    { url: base, changeFrequency: "monthly", priority: 1, images: [`${base}/brand/nobs-logo.webp`] },
     { url: `${base}/services`, changeFrequency: "monthly", priority: 0.9 },
     ...services.map((s) => ({ url: `${base}/services/${s.slug}`, changeFrequency: "monthly" as const, priority: 0.8 })),
     { url: `${base}/results`, changeFrequency: "monthly", priority: 0.8, images: resultImages },
