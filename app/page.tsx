@@ -124,7 +124,7 @@ export default function HomePage() {
               <p className="eyebrow">Proof, not promises</p>
               <h2 className="mt-3 font-display text-3xl font-extrabold text-white sm:text-4xl">Drag the line. Real jobs, real results.</h2>
             </div>
-            <Link href="/results" className="inline-flex items-center gap-2 text-sm font-semibold text-electric hover:text-white">
+            <Link href="/results" className="inline-flex items-center gap-2 rounded-md bg-ink/90 px-3 py-2 text-sm font-semibold text-electric hover:text-white">
               See all results <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>
           </div>
@@ -199,7 +199,7 @@ export default function HomePage() {
               <p className="eyebrow">From the blog</p>
               <h2 className="mt-3 font-display text-3xl font-extrabold text-white sm:text-4xl">Useful answers. No fluff.</h2>
             </div>
-            <Link href="/blog" className="inline-flex items-center gap-2 text-sm font-semibold text-electric hover:text-white">
+            <Link href="/blog" className="inline-flex items-center gap-2 rounded-md bg-ink/90 px-3 py-2 text-sm font-semibold text-electric hover:text-white">
               All articles <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>
           </div>

@@ -71,7 +71,7 @@ export default function BeforeAfterSlider({
         <span className="absolute left-3 top-3 rounded bg-ink/80 px-2 py-1 text-[10px] font-bold uppercase tracking-widest text-mist">Before</span>
         <span className="absolute right-3 top-3 rounded bg-electric/90 px-2 py-1 text-[10px] font-bold uppercase tracking-widest text-ink">After</span>
       </div>
-      <figcaption className="mt-3 text-sm font-medium text-chrome">{title}</figcaption>
+      <figcaption className="mt-3 inline-block rounded bg-ink/90 px-2 py-1 text-sm font-medium text-chrome">{title}</figcaption>
     </figure>
   );
 }
