@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "Blog | Lowcountry Exterior Cleaning Answers",
   description:
     "Practical answers about pressure washing, soft washing, roof streaks, algae, HOA letters, and listing prep for Bluffton, Hilton Head Island, and Beaufort SC homeowners.",
+  alternates: { canonical: "/blog" },
 };
 
 export default function BlogPage() {

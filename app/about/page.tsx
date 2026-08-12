@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "About | No BS Power Wash, Bluffton SC",
   description:
     "No BS Power Wash & Soft Wash is owner Bob Stella's Lowcountry exterior cleaning company. Straight answers, the right method for every surface, and results you can see.",
+  alternates: { canonical: "/about" },
 };
 
 export default function AboutPage() {

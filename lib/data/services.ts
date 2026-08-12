@@ -56,7 +56,7 @@ export const services: Service[] = [
       },
     ],
     relatedBlogSlugs: ["why-lowcountry-homes-turn-green", "soft-wash-vs-pressure-wash", "hoa-letter-exterior-cleaning"],
-    images: ["PXL_20250905_173424497.MP.webp", "PXL_20250515_152851979.MP.webp", "PXL_20260605_151009090.MP.webp"],
+    images: ["vinyl-siding-free-of-algae-after-a-soft-wash.webp", "long-siding-wall-even-and-bright-after-washing.webp", "garage-side-wall-bright-white-after-a-house-wash.webp"],
     pairs: ["siding-2022", "siding-green", "siding-wall", "siding-2023", "siding-may"],
   },
   {
@@ -97,7 +97,7 @@ export const services: Service[] = [
       },
     ],
     relatedBlogSlugs: ["soft-wash-vs-pressure-wash", "black-streaks-on-roof", "why-lowcountry-homes-turn-green"],
-    images: ["PXL_20230411_213001675.webp", "PXL_20230411_212037986.MP.webp", "PXL_20251002_194338808.MP.webp"],
+    images: ["metal-roof-with-grime-streaks-being-treated-during-a-roof-cleaning.webp", "white-metal-roof-being-soft-washed.webp", "wood-fence-boards-clean-after-washing.webp"],
     pairs: ["fence-algae", "siding-green"],
   },
   {
@@ -138,7 +138,7 @@ export const services: Service[] = [
       },
     ],
     relatedBlogSlugs: ["black-streaks-on-roof", "soft-wash-vs-pressure-wash", "roof-cleaning-safety"],
-    images: ["PXL_20230411_212037986.MP.webp", "PXL_20230411_213001675.webp"],
+    images: ["white-metal-roof-being-soft-washed.webp", "metal-roof-with-grime-streaks-being-treated-during-a-roof-cleaning.webp"],
     pairs: [],
   },
   {
@@ -179,7 +179,7 @@ export const services: Service[] = [
       },
     ],
     relatedBlogSlugs: ["slippery-concrete-lowcountry", "paver-cleaning-joint-sand", "diy-pressure-washing-mistakes"],
-    images: ["PXL_20250829_162846268.MP.webp", "PXL_20250903_183313224.MP.webp", "PXL_20260804_174736532.MP.webp"],
+    images: ["garage-driveway-freshly-pressure-washed.webp", "pool-deck-clean-and-uniform-after-washing.webp", "paver-patio-bright-and-clean-after-washing.webp"],
     pairs: ["paver-walkway", "paver-patio", "front-walk", "porch-landing", "pool-deck", "patio-screened", "fence-gray"],
   },
   {
@@ -220,7 +220,7 @@ export const services: Service[] = [
       },
     ],
     relatedBlogSlugs: ["soft-wash-vs-pressure-wash", "diy-pressure-washing-mistakes", "slippery-concrete-lowcountry"],
-    images: ["PXL_20250827_191105211.MP.webp", "PXL_20260723_145055607.MP.webp", "PXL_20230429_144208168.webp"],
+    images: ["rotary-surface-cleaner-working-a-side-walkway.webp", "concrete-pad-being-cleaned-with-pressure-washing-equipment-on-site.webp", "pressure-washing-rig-set-up-at-a-large-home-driveway-project.webp"],
     pairs: ["side-walkway", "block-wall", "fence-algae"],
   },
   {
@@ -261,7 +261,7 @@ export const services: Service[] = [
       },
     ],
     relatedBlogSlugs: ["screened-porch-pollen-season", "why-lowcountry-homes-turn-green", "pre-listing-exterior-cleaning"],
-    images: ["PXL_20230919_152614187.webp", "PXL_20230406_200151014.webp", "PXL_20230406_191025556.MP.webp"],
+    images: ["screened-patio-concrete-floor-clean-after-washing.webp", "long-covered-porch-floor-clean-and-glossy-after-washing.webp", "white-porch-railing-freshly-cleaned-after-washing.webp"],
     pairs: ["patio-screened", "porch-balcony"],
   },
 ];

@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   title: "Results | Before & After Exterior Cleaning in the Lowcountry",
   description:
     "Real before and after photos from No BS Power Wash jobs in Bluffton, Hilton Head Island, and Beaufort SC. House washing, roof cleaning, driveways, and more.",
+  alternates: { canonical: "/results" },
 };
 
 export default function ResultsPage() {

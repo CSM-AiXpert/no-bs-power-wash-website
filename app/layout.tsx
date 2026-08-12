@@ -41,6 +41,7 @@ export const metadata: Metadata = {
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
+  "@id": `${site.url}/#business`,
   name: site.name,
   description:
     "Pressure washing, power washing, and soft washing for homes and businesses in Bluffton, Hilton Head Island, and Beaufort SC.",
@@ -51,14 +52,29 @@ const localBusinessSchema = {
   areaServed: site.areas.map((a) => ({ "@type": "City", name: a })),
   slogan: site.tagline,
   image: `${site.url}/brand/nobs-logo.webp`,
+  sameAs: site.socials.map((social) => social.href),
   priceRange: "$$",
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${site.url}/#website`,
+  name: site.name,
+  url: site.url,
+  inLanguage: "en-US",
+  publisher: { "@id": `${site.url}/#business` },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${mulish.variable} ${jetbrains.variable} ${hero.variable}`}>
+      <head>
+        <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM-readable site summary" />
+      </head>
       <body className="min-h-screen bg-ink text-white antialiased">
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
         {/* Global kinetic shader: fixed behind every page, variant routed per path */}
         <GlobalShader />
         <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[60] focus:rounded focus:bg-electric focus:px-4 focus:py-2 focus:text-ink">

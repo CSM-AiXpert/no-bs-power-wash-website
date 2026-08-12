@@ -29,7 +29,7 @@ export const posts: BlogPost[] = [
     dateLabel: "August 12, 2026",
     service: "Soft Washing",
     serviceSlug: "soft-washing",
-    image: "PXL_20260804_174736532.MP.webp",
+    image: "paver-patio-bright-and-clean-after-washing.webp",
     imageAlt: "A freshly soft washed Lowcountry home exterior in Bluffton SC",
     metaTitle: "Lowcountry Exterior Cleaning Calendar | No BS Power Wash",
     metaDescription:
@@ -108,7 +108,7 @@ export const posts: BlogPost[] = [
     dateLabel: "August 5, 2026",
     service: "Pressure & Power Washing",
     serviceSlug: "pressure-power-washing",
-    image: "PXL_20230406_190825585.webp",
+    image: "covered-porch-floor-with-hose-laid-out-before-washing.webp",
     imageAlt: "Driveway pressure washing in progress on a Lowcountry home",
     metaTitle: "7 DIY Pressure Washing Mistakes | No BS Power Wash",
     metaDescription:
@@ -182,7 +182,7 @@ export const posts: BlogPost[] = [
     dateLabel: "July 29, 2026",
     service: "Screened Porch Cleaning",
     serviceSlug: "screened-porch-cleaning",
-    image: "PXL_20230417_183750589.webp",
+    image: "tall-house-siding-with-dark-staining-before-washing.webp",
     imageAlt: "Clean screened porch on a Lowcountry home after professional cleaning",
     metaTitle: "Screened Porch Cleaning in the Lowcountry | No BS Power Wash",
     metaDescription:
@@ -251,7 +251,7 @@ export const posts: BlogPost[] = [
     dateLabel: "July 22, 2026",
     service: "House Washing",
     serviceSlug: "house-washing",
-    image: "PXL_20250515_152405802.MP.webp",
+    image: "long-siding-wall-with-gray-mildew-streaks-before-washing.webp",
     imageAlt: "Freshly washed Lowcountry home exterior ready for listing photos",
     metaTitle: "Exterior Cleaning Before Selling Your Home | Bluffton SC",
     metaDescription:
@@ -316,7 +316,7 @@ export const posts: BlogPost[] = [
     dateLabel: "July 15, 2026",
     service: "House Washing",
     serviceSlug: "house-washing",
-    image: "PXL_20260804_142757212.MP.webp",
+    image: "curving-paver-walkway-dark-with-algae-before-cleaning.webp",
     imageAlt: "Clean home exterior in a Bluffton HOA community after soft washing",
     metaTitle: "Got an HOA Letter About Your Exterior? | No BS Power Wash",
     metaDescription:
@@ -389,7 +389,7 @@ export const posts: BlogPost[] = [
     dateLabel: "July 8, 2026",
     service: "Driveway & Concrete Cleaning",
     serviceSlug: "driveway-concrete-cleaning",
-    image: "PXL_20230429_144208168.webp",
+    image: "pressure-washing-rig-set-up-at-a-large-home-driveway-project.webp",
     imageAlt: "Before and after driveway concrete cleaning on a Lowcountry home",
     metaTitle: "How Often to Clean Your Driveway in the Lowcountry",
     metaDescription:
@@ -462,7 +462,7 @@ export const posts: BlogPost[] = [
     dateLabel: "July 1, 2026",
     service: "Roof Cleaning",
     serviceSlug: "roof-cleaning",
-    image: "PXL_20250903_174319106.MP.webp",
+    image: "pool-deck-concrete-with-dark-staining-before-cleaning.webp",
     imageAlt: "Roof with black algae streaks before soft wash roof cleaning",
     metaTitle: "Black Streaks on Your Roof? It's Alive. | No BS Power Wash",
     metaDescription:
@@ -531,7 +531,7 @@ export const posts: BlogPost[] = [
     dateLabel: "June 24, 2026",
     service: "Soft Washing",
     serviceSlug: "soft-washing",
-    image: "PXL_20260804_174803597.MP.webp",
+    image: "curving-paver-walkway-light-tan-and-clean-after-washing.webp",
     imageAlt: "Soft washing equipment treating a Lowcountry home exterior",
     metaTitle: "Soft Wash vs. Pressure Wash: The Real Difference",
     metaDescription:
@@ -601,7 +601,7 @@ export const posts: BlogPost[] = [
     dateLabel: "June 17, 2026",
     service: "House Washing",
     serviceSlug: "house-washing",
-    image: "PXL_20230411_213001675.webp",
+    image: "metal-roof-with-grime-streaks-being-treated-during-a-roof-cleaning.webp",
     imageAlt: "Green algae on siding before a soft wash house washing treatment",
     metaTitle: "Why Lowcountry Homes Turn Green | No BS Power Wash",
     metaDescription:

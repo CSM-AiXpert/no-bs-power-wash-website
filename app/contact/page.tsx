@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "Get a Free Quote | No BS Power Wash, Bluffton SC",
   description:
     "Request a free exterior cleaning quote from No BS Power Wash. Call or text 843-321-9345 or send the form. Serving Bluffton, Hilton Head Island, and Beaufort SC.",
+  alternates: { canonical: "/contact" },
 };
 
 export default function ContactPage() {

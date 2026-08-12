@@ -5,6 +5,7 @@ import Reveal from "@/components/motion/Reveal";
 export const metadata: Metadata = {
   title: "Terms & Conditions",
   description: "Terms & Conditions for No BS Power Wash & Soft Wash, including SMS/text messaging program terms.",
+  alternates: { canonical: "/terms" },
 };
 
 export default function TermsPage() {

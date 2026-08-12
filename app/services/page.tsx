@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   title: "Exterior Cleaning Services in Bluffton & Hilton Head SC",
   description:
     "House washing, soft washing, roof cleaning, driveway and concrete cleaning, pressure washing, and screened porch cleaning across the SC Lowcountry. Free quotes: 843-321-9345.",
+  alternates: { canonical: "/services" },
 };
 
 export default function ServicesPage() {

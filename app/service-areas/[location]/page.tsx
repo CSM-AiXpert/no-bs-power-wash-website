@@ -19,6 +19,7 @@ export async function generateMetadata({ params }: { params: Promise<{ location:
   return {
     title: `${l.name} | No BS Power Wash`,
     description: `${l.intro.slice(0, 150)}... Free quote: ${site.phone}.`,
+    alternates: { canonical: `/service-areas/${l.slug}` },
   };
 }
 

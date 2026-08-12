@@ -22,6 +22,7 @@ export async function generateMetadata({ params }: { params: Promise<{ service: 
   return {
     title: `${s.shortName} | Bluffton, Hilton Head & Beaufort SC`,
     description: `${s.description.slice(0, 150)}... Free quote: ${site.phone}.`,
+    alternates: { canonical: `/services/${s.slug}` },
   };
 }
 

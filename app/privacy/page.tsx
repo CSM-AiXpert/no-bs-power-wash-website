@@ -5,6 +5,7 @@ import Reveal from "@/components/motion/Reveal";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description: "Privacy Policy for No BS Power Wash & Soft Wash, including SMS/text messaging and mobile data policies.",
+  alternates: { canonical: "/privacy" },
 };
 
 export default function PrivacyPage() {

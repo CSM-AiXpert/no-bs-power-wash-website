@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { Phone, ArrowRight, ShieldCheck, MessageSquare, Sparkles, MapPin } from "lucide-react";
@@ -9,6 +10,10 @@ import { site } from "@/lib/data/site";
 import { services } from "@/lib/data/services";
 import { pairs } from "@/lib/data/results";
 import { posts } from "@/lib/data/blog";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 const problems = [
   { title: "Green siding", body: "That green film is algae feeding on your siding. Humidity here means it never stops on its own.", service: "house-washing" },
@@ -154,9 +159,11 @@ export default function HomePage() {
             ))}
           </div>
           <Reveal delay={0.1}>
-            <p className="mt-10 rounded-2xl glass-red p-6 text-center text-sm text-chrome">
-              <strong className="text-white">Referral program:</strong> earn a $25 credit for every neighbor you send our way. After 4 referrals, you can choose a $100 Visa card instead. Clean house, easy money.
-            </p>
+            <div className="mt-10 text-center">
+              <Link href="/contact" className="inline-flex min-h-11 items-center justify-center rounded-lg border-2 border-signal/55 bg-signal/10 px-7 py-3 text-sm font-bold text-white transition-colors hover:border-electric hover:bg-electric/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-electric">
+                Ask about Referral program
+              </Link>
+            </div>
           </Reveal>
         </div>
       </section>

@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   title: "Service Areas | Bluffton, Hilton Head, Beaufort, Okatie, Hardeeville & Ridgeland SC",
   description:
     "No BS Power Wash serves Bluffton, Hilton Head Island, Beaufort, Okatie, Hardeeville, and Ridgeland SC with house washing, roof cleaning, soft washing, and concrete cleaning.",
+  alternates: { canonical: "/service-areas" },
 };
 
 export default function ServiceAreasPage() {

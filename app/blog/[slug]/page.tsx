@@ -19,12 +19,19 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: p.metaTitle,
     description: p.metaDescription,
+    alternates: { canonical: `/blog/${p.slug}` },
     openGraph: {
       title: p.metaTitle,
       description: p.metaDescription,
       type: "article",
       publishedTime: p.date,
       images: [{ url: `/results/${p.image}`, alt: p.imageAlt }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: p.metaTitle,
+      description: p.metaDescription,
+      images: [`/results/${p.image}`],
     },
   };
 }
