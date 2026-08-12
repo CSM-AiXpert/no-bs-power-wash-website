@@ -19,9 +19,9 @@ export default function GalleryGrid({
   const Card = ({ g }: { g: ResultImage }) => (
     <figure className="group">
       <Link href={`/services/${g.serviceSlug}`} className="block cursor-pointer">
-        <div className="glass relative aspect-[4/3] overflow-hidden rounded-xl">
+        <div className="relative aspect-[4/3] overflow-hidden rounded-xl border-2 border-[rgba(150,205,255,0.28)] bg-[#07101c]/35 shadow-[0_16px_45px_rgba(0,0,0,.28)]">
           <Image src={`/results/${g.file}`} alt={g.alt} fill sizes="(max-width: 640px) 50vw, 25vw"
-            className="object-cover transition-transform duration-500 group-hover:scale-105" />
+            className="object-cover [filter:none] [mix-blend-mode:normal] transition-transform duration-500 group-hover:scale-105" />
           <span className="absolute bottom-2 left-2 rounded bg-ink/85 px-2 py-1 text-[10px] font-bold uppercase tracking-widest text-electric">
             {g.service}
           </span>

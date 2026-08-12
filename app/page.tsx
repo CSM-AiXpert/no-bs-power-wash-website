@@ -35,7 +35,7 @@ export default function HomePage() {
           <div className="min-w-0">
             <Reveal eager>
               <p className="mb-4 inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-electric">
-                <MapPin className="h-3.5 w-3.5" aria-hidden="true" /> Bluffton &middot; Hilton Head &middot; Beaufort
+                <MapPin className="h-3.5 w-3.5" aria-hidden="true" /> Serving The Greater Lowcountry
               </p>
             </Reveal>
             <Reveal eager>
