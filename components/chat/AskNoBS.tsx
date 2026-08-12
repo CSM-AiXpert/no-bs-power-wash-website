@@ -140,7 +140,7 @@ export default function AskNoBS() {
         <span className="ask-bubble ask-bubble-ten" aria-hidden="true">🫧</span>
         <span className="ask-bubble ask-bubble-eleven" aria-hidden="true">🫧</span>
         <span className="ask-bubble ask-bubble-twelve" aria-hidden="true">🫧</span>
-        <span className="relative z-10 max-w-[68px] text-center font-mono-hud text-[12px] font-black uppercase leading-[0.92] tracking-[-0.04em] text-white drop-shadow-[0_2px_7px_rgba(0,0,0,.85)]">
+        <span className="relative z-10 max-w-[68px] text-center font-mono-hud text-[14px] font-black uppercase leading-[0.92] tracking-[-0.04em] text-white drop-shadow-[0_2px_7px_rgba(0,0,0,.85)]">
           {open ? <X className="mx-auto h-6 w-6" /> : <>Ask<br /><span className="text-electric">No</span> <span className="text-signal">BS</span></>}
         </span>
       </button>
