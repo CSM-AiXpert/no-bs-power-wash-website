@@ -1,0 +1,26 @@
+export type Community = { name: string; town: string; gated?: boolean };
+
+export const communities: Community[] = [
+  { name: "Sun City Hilton Head", town: "Bluffton", gated: true },
+  { name: "Latitude Margaritaville", town: "Hardeeville", gated: true },
+  { name: "Riverton Pointe", town: "Hardeeville", gated: true },
+  { name: "Palmetto Bluff", town: "Bluffton", gated: true },
+  { name: "Colleton River", town: "Bluffton", gated: true },
+  { name: "Belfair", town: "Bluffton", gated: true },
+  { name: "Berkeley Hall", town: "Bluffton", gated: true },
+  { name: "Hampton Hall", town: "Bluffton", gated: true },
+  { name: "Hampton Lake", town: "Bluffton", gated: true },
+  { name: "Spring Island", town: "Okatie", gated: true },
+  { name: "Oldfield", town: "Okatie", gated: true },
+  { name: "Callawassie Island", town: "Okatie", gated: true },
+  { name: "Sea Pines", town: "Hilton Head Island", gated: true },
+  { name: "Palmetto Dunes", town: "Hilton Head Island", gated: true },
+  { name: "Hilton Head Plantation", town: "Hilton Head Island", gated: true },
+  { name: "Indigo Run", town: "Hilton Head Island", gated: true },
+  { name: "Long Cove Club", town: "Hilton Head Island", gated: true },
+  { name: "Wexford", town: "Hilton Head Island", gated: true },
+  { name: "Port Royal Plantation", town: "Hilton Head Island", gated: true },
+  { name: "Dataw Island", town: "Beaufort", gated: true },
+  { name: "Cat Island", town: "Beaufort", gated: true },
+  { name: "Coosaw Point", town: "Beaufort", gated: true },
+];
