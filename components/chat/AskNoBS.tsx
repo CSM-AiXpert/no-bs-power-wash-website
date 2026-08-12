@@ -36,11 +36,21 @@ function customizeLeadConnectorWidget() {
   ];
 
   walkShadowRoots(document, (root) => {
+    const hasLeadConnectorLauncher = launcherSelectors.some((selector) => root.querySelector(selector));
+    if (hasLeadConnectorLauncher && !root.querySelector("#nobs-hide-leadconnector-launcher")) {
+      const style = document.createElement("style");
+      style.id = "nobs-hide-leadconnector-launcher";
+      style.textContent = `${launcherSelectors.join(",")} { display: none !important; visibility: hidden !important; pointer-events: none !important; }`;
+      root.appendChild(style);
+    }
+
     launcherSelectors.forEach((selector) => {
       root.querySelectorAll<HTMLElement>(selector).forEach((element) => {
         element.style.setProperty("display", "none", "important");
         element.style.setProperty("visibility", "hidden", "important");
         element.style.setProperty("pointer-events", "none", "important");
+        element.setAttribute("aria-hidden", "true");
+        element.setAttribute("tabindex", "-1");
       });
     });
 
@@ -65,7 +75,14 @@ export default function AskNoBS() {
   const startAvatarSync = useCallback(() => {
     if (avatarSyncRef.current) window.clearInterval(avatarSyncRef.current);
     customizeLeadConnectorWidget();
-    avatarSyncRef.current = window.setInterval(customizeLeadConnectorWidget, 500);
+    avatarSyncRef.current = window.setInterval(() => {
+      customizeLeadConnectorWidget();
+      if (window.leadConnector?.chatWidget?.isActive?.() === false) {
+        setOpen(false);
+        if (avatarSyncRef.current) window.clearInterval(avatarSyncRef.current);
+        avatarSyncRef.current = null;
+      }
+    }, 500);
   }, []);
 
   const stopAvatarSync = useCallback(() => {
@@ -152,7 +169,7 @@ export default function AskNoBS() {
   }, [loadWidget, open, startAvatarSync, stopAvatarSync]);
 
   return (
-    <div className="fixed bottom-[58px] right-3 z-[2147483647] sm:bottom-[62px] sm:right-6">
+    <div className={`fixed bottom-[58px] right-3 z-[2147483647] sm:bottom-[62px] sm:right-6 ${open ? "pointer-events-none invisible" : "visible"}`}>
       <button
         type="button"
         onClick={toggleWidget}
