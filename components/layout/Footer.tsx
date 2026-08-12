@@ -14,7 +14,7 @@ const iconMap: Record<string, (p: { className?: string }) => React.ReactNode> = 
 
 export default function Footer() {
   return (
-    <footer className="relative overflow-hidden border-t border-white/10 bg-ink/50 backdrop-blur-xl">
+    <footer className="relative overflow-hidden border-t border-white/10 bg-[#03060b]">
       <div className="footer-outline-mark pointer-events-none absolute inset-0 z-0 flex items-center justify-center gap-[0.06em] whitespace-nowrap" aria-hidden="true">
         <span className="footer-outline-no">NO</span>
         <span className="footer-outline-bs">BS</span>

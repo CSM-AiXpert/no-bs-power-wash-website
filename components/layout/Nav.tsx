@@ -25,7 +25,7 @@ export default function Nav() {
   return (
     <header className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${scrolled || open ? "border-b border-white/10 bg-ink/60 backdrop-blur-xl" : "bg-transparent"}`}>
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6">
-        <Link href="/" className="group flex items-center gap-3" aria-label="No BS Power Wash home">
+        <Link href="/" className="group flex items-center gap-3">
           <Image src="/brand/nobs-logo.webp" alt="No BS Power Wash logo" width={44} height={44} className="h-11 w-auto" priority />
           <span className="hidden sm:block">
             <span className="block font-display text-sm font-extrabold uppercase tracking-wider text-white transition-colors duration-200 group-hover:text-signal">No BS Power Wash</span>

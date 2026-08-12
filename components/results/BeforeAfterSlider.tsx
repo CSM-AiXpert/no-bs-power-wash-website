@@ -57,9 +57,9 @@ export default function BeforeAfterSlider({
         }}
         className="relative aspect-[4/3] w-full cursor-ew-resize touch-none select-none overflow-hidden rounded-xl border-2 border-[rgba(150,205,255,0.34)] bg-[#07101c]/35 shadow-[0_16px_45px_rgba(0,0,0,.3)]"
       >
-        <Image draggable={false} src={`/results/${after}`} alt={afterAlt} fill sizes="(max-width: 768px) 100vw, 50vw" className="pointer-events-none object-cover [filter:brightness(1.13)_contrast(1.08)_saturate(1.10)] [mix-blend-mode:normal]" />
+        <Image draggable={false} src={`/results/${after}`} alt={afterAlt} fill sizes="(max-width: 768px) calc(100vw - 32px), (max-width: 1280px) 45vw, 400px" quality={62} className="pointer-events-none object-cover [filter:brightness(1.13)_contrast(1.08)_saturate(1.10)] [mix-blend-mode:normal]" />
         <div className="pointer-events-none absolute inset-0 overflow-hidden" style={{ width: `${pos}%` }}>
-          <Image draggable={false} src={`/results/${before}`} alt={beforeAlt} fill sizes="(max-width: 768px) 100vw, 50vw" className="pointer-events-none object-cover [filter:none] [mix-blend-mode:normal]" style={{ width: trackRef.current?.clientWidth || "100%", maxWidth: "none" }} />
+          <Image draggable={false} src={`/results/${before}`} alt={beforeAlt} fill sizes="(max-width: 768px) calc(100vw - 32px), (max-width: 1280px) 45vw, 400px" quality={62} className="pointer-events-none object-cover [filter:none] [mix-blend-mode:normal]" style={{ width: trackRef.current?.clientWidth || "100%", maxWidth: "none" }} />
         </div>
         {/* divider */}
         <div className="pointer-events-none absolute inset-y-0 z-10" style={{ left: `${pos}%` }} aria-hidden="true">

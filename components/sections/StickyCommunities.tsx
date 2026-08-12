@@ -1,12 +1,8 @@
-"use client";
-
-import { useReducedMotion } from "framer-motion";
 import { ShieldCheck } from "lucide-react";
 import { communities } from "@/lib/data/communities";
 
 /** Always-visible community trust ticker. Names only, no town labels. */
 export default function StickyCommunities() {
-  const reduce = useReducedMotion();
   const row = [...communities, ...communities];
 
   return (
@@ -20,8 +16,8 @@ export default function StickyCommunities() {
         <div className="relative min-w-0 flex-1 overflow-hidden">
           <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-10 bg-gradient-to-r from-[#04070c] to-transparent" />
           <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-10 bg-gradient-to-l from-[#04070c] to-transparent" />
-          <div className="flex w-max items-center gap-8 pl-8" style={reduce ? undefined : { animation: "nobs-marquee 58s linear infinite" }}>
-            {(reduce ? communities : row).map((c, i) => (
+          <div className="community-marquee flex w-max items-center gap-8 pl-8">
+            {row.map((c, i) => (
               <span key={`${c.name}-${i}`} className="whitespace-nowrap font-mono-hud text-[10px] font-semibold uppercase tracking-[.15em] text-chrome">
                 <span className="mr-3 text-electric">◆</span>{c.name}
               </span>

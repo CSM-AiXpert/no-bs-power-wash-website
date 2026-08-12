@@ -67,7 +67,7 @@ export default function HomePage() {
           </div>
           <Reveal eager className="hidden lg:block">
             <div className="relative">
-              <Image src="/brand/nobs-logo.webp" alt="No BS Power Wash emblem: No Games. Just Clean." width={1024} height={1024} priority
+              <Image src="/brand/nobs-logo.webp" alt="No BS Power Wash emblem: No Games. Just Clean." width={1024} height={1024} priority sizes="448px" quality={62}
                 className="mx-auto w-full max-w-md" />
             </div>
           </Reveal>
