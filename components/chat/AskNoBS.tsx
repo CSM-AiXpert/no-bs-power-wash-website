@@ -60,6 +60,19 @@ export default function AskNoBS() {
   const [loading, setLoading] = useState(false);
   const observerRef = useRef<MutationObserver | null>(null);
   const pollRef = useRef<number | null>(null);
+  const avatarSyncRef = useRef<number | null>(null);
+
+  const startAvatarSync = useCallback(() => {
+    if (avatarSyncRef.current) window.clearInterval(avatarSyncRef.current);
+    customizeLeadConnectorWidget();
+    avatarSyncRef.current = window.setInterval(customizeLeadConnectorWidget, 500);
+  }, []);
+
+  const stopAvatarSync = useCallback(() => {
+    if (!avatarSyncRef.current) return;
+    window.clearInterval(avatarSyncRef.current);
+    avatarSyncRef.current = null;
+  }, []);
 
   const openWhenReady = useCallback(() => {
     let attempts = 0;
@@ -70,7 +83,7 @@ export default function AskNoBS() {
         customizeLeadConnectorWidget();
         widget.openWidget();
         setOpen(true);
-        [100, 500, 1200].forEach((delay) => window.setTimeout(customizeLeadConnectorWidget, delay));
+        startAvatarSync();
         return;
       }
       attempts += 1;
@@ -78,7 +91,7 @@ export default function AskNoBS() {
       else setLoading(false);
     };
     detect();
-  }, []);
+  }, [startAvatarSync]);
 
   const loadWidget = useCallback(() => {
     if (loading) return;
@@ -107,15 +120,17 @@ export default function AskNoBS() {
     const close = (event: KeyboardEvent) => {
       if (event.key !== "Escape") return;
       window.leadConnector?.chatWidget?.closeWidget?.();
+      stopAvatarSync();
       setOpen(false);
     };
     window.addEventListener("keydown", close);
     return () => {
       window.removeEventListener("keydown", close);
       observerRef.current?.disconnect();
+      stopAvatarSync();
       if (pollRef.current) window.clearTimeout(pollRef.current);
     };
-  }, []);
+  }, [stopAvatarSync]);
 
   const toggleWidget = useCallback(() => {
     const widget = window.leadConnector?.chatWidget;
@@ -127,13 +142,14 @@ export default function AskNoBS() {
     const isWidgetOpen = widget.isActive?.() ?? open;
     if (isWidgetOpen) {
       widget.closeWidget?.();
+      stopAvatarSync();
       setOpen(false);
     } else {
       widget.openWidget();
       setOpen(true);
+      startAvatarSync();
     }
-    [100, 500, 1200].forEach((delay) => window.setTimeout(customizeLeadConnectorWidget, delay));
-  }, [loadWidget, open]);
+  }, [loadWidget, open, startAvatarSync, stopAvatarSync]);
 
   return (
     <div className="fixed bottom-[58px] right-3 z-[2147483647] sm:bottom-[62px] sm:right-6">
