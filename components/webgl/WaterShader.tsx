@@ -131,9 +131,6 @@ export default function WaterShader({ className = "", variant = "tide" }: { clas
     const canvas = ref.current;
     if (!canvas) return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    // Mobile-first performance: the CSS water field is the visual fallback below 768px.
-    // Avoid compiling and continuously drawing a fragment shader on phones.
-    if (window.innerWidth < 768) return;
 
     const gl = canvas.getContext("webgl", { antialias: false, alpha: false, powerPreference: "low-power" });
     if (!gl) return;
@@ -163,6 +160,9 @@ export default function WaterShader({ className = "", variant = "tide" }: { clas
 
     let raf = 0;
     let visible = true;
+    let lastFrame = 0;
+    const mobile = window.innerWidth < 768;
+    const frameInterval = mobile ? 1000 / 30 : 0;
     const start = performance.now();
 
     const resize = () => {
@@ -179,11 +179,13 @@ export default function WaterShader({ className = "", variant = "tide" }: { clas
     resize();
     window.addEventListener("resize", resize);
 
-    const frame = () => {
+    const frame = (now: number) => {
       raf = requestAnimationFrame(frame);
       if (!visible || document.hidden) return;
+      if (frameInterval && now - lastFrame < frameInterval) return;
+      lastFrame = now;
       gl.uniform2f(uRes, canvas.width, canvas.height);
-      gl.uniform1f(uTime, (performance.now() - start) / 1000);
+      gl.uniform1f(uTime, (now - start) / 1000);
       gl.drawArrays(gl.TRIANGLES, 0, 3);
     };
     raf = requestAnimationFrame(frame);
