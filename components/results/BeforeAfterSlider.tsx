@@ -50,24 +50,21 @@ export default function BeforeAfterSlider({
         aria-valuemax={100}
         tabIndex={0}
         onPointerDown={onPointerDown}
+        onDragStart={(e) => e.preventDefault()}
         onKeyDown={(e) => {
           if (e.key === "ArrowLeft") setPos((p) => Math.max(0, p - 4));
           if (e.key === "ArrowRight") setPos((p) => Math.min(100, p + 4));
         }}
         className="relative aspect-[4/3] w-full cursor-ew-resize touch-none select-none overflow-hidden rounded-xl border-2 border-[rgba(150,205,255,0.34)] bg-[#07101c]/35 shadow-[0_16px_45px_rgba(0,0,0,.3)]"
       >
-        <Image src={`/results/${after}`} alt={afterAlt} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover [filter:brightness(1.06)_contrast(1.06)_saturate(1.08)] [mix-blend-mode:normal]" />
-        <div className="absolute inset-0 overflow-hidden" style={{ width: `${pos}%` }}>
-          <Image src={`/results/${before}`} alt={beforeAlt} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover [filter:none] [mix-blend-mode:normal]" style={{ width: trackRef.current?.clientWidth || "100%", maxWidth: "none" }} />
+        <Image draggable={false} src={`/results/${after}`} alt={afterAlt} fill sizes="(max-width: 768px) 100vw, 50vw" className="pointer-events-none object-cover [filter:brightness(1.13)_contrast(1.08)_saturate(1.10)] [mix-blend-mode:normal]" />
+        <div className="pointer-events-none absolute inset-0 overflow-hidden" style={{ width: `${pos}%` }}>
+          <Image draggable={false} src={`/results/${before}`} alt={beforeAlt} fill sizes="(max-width: 768px) 100vw, 50vw" className="pointer-events-none object-cover [filter:none] [mix-blend-mode:normal]" style={{ width: trackRef.current?.clientWidth || "100%", maxWidth: "none" }} />
         </div>
-        {/* power-wash water divider */}
+        {/* divider */}
         <div className="pointer-events-none absolute inset-y-0 z-10" style={{ left: `${pos}%` }} aria-hidden="true">
-          <div className="wash-jet-line absolute inset-y-0 -left-[2px] w-1" />
-          <span className="wash-droplet wash-droplet-one" />
-          <span className="wash-droplet wash-droplet-two" />
-          <span className="wash-droplet wash-droplet-three" />
-          <span className="wash-droplet wash-droplet-four" />
-          <div className="wash-slider-handle absolute top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-electric bg-ink/90 px-2.5 py-2 text-[10px] font-bold tracking-widest text-electric">
+          <div className="absolute inset-y-0 -left-px w-0.5 bg-electric shadow-[0_0_18px_rgba(46,168,255,0.8)]" />
+          <div className="absolute top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-electric bg-ink/90 px-2.5 py-2 text-[10px] font-bold tracking-widest text-electric shadow-[0_0_16px_rgba(46,168,255,.65)]">
             <span>&larr; &rarr;</span>
           </div>
         </div>
