@@ -135,11 +135,11 @@ export default function AskNoBS() {
       widget.openWidget();
       setOpen(true);
     }
-    window.setTimeout(customizeLeadConnectorWidget, 100);
+    [100, 500, 1200].forEach((delay) => window.setTimeout(customizeLeadConnectorWidget, delay));
   }, [open]);
 
   return (
-    <div className="fixed bottom-[58px] right-3 z-[90] sm:bottom-[62px] sm:right-6">
+    <div className="fixed bottom-[58px] right-3 z-[2147483647] sm:bottom-[62px] sm:right-6">
       <button
         type="button"
         onClick={toggleWidget}
