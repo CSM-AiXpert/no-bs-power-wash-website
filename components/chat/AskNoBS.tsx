@@ -5,6 +5,7 @@ import { LoaderCircle, X } from "lucide-react";
 
 const WIDGET_ID = "6a7cf598187766e8c206c450";
 const SCRIPT_ID = "leadconnector-chat-loader";
+const AVATAR_URL = "/chat/ask-no-bs-avatar.webp";
 
 declare global {
   interface Window {
@@ -43,6 +44,29 @@ function hideLeadConnectorLauncher() {
   hideInside(document);
 }
 
+function applyLeadConnectorAvatar() {
+  const updateInside = (root: Document | ShadowRoot) => {
+    root.querySelectorAll<HTMLImageElement>(
+      "img.lc_text-widget_prompt--avatar, img.header-circular-image, img.thumbnail-img",
+    ).forEach((image) => {
+      image.src = AVATAR_URL;
+      image.alt = "Ask No BS live chat assistant";
+      image.style.setProperty("object-fit", "cover");
+      image.style.setProperty("object-position", "center");
+    });
+    root.querySelectorAll<HTMLElement>("*").forEach((element) => {
+      if (element.shadowRoot) updateInside(element.shadowRoot);
+    });
+  };
+
+  updateInside(document);
+}
+
+function customizeLeadConnectorWidget() {
+  hideLeadConnectorLauncher();
+  applyLeadConnectorAvatar();
+}
+
 export default function AskNoBS() {
   const [open, setOpen] = useState(false);
   const [ready, setReady] = useState(false);
@@ -56,7 +80,7 @@ export default function AskNoBS() {
       const widget = window.leadConnector?.chatWidget;
       if (widget?.openWidget) {
         setReady(true);
-        hideLeadConnectorLauncher();
+        customizeLeadConnectorWidget();
         return;
       }
       attempts += 1;
@@ -76,10 +100,10 @@ export default function AskNoBS() {
       detectReady();
     }
 
-    const observer = new MutationObserver(hideLeadConnectorLauncher);
+    const observer = new MutationObserver(customizeLeadConnectorWidget);
     observer.observe(document.body, { childList: true, subtree: true });
     const delayedPasses = [500, 1500, 3000, 6000].map((delay) =>
-      window.setTimeout(hideLeadConnectorLauncher, delay),
+      window.setTimeout(customizeLeadConnectorWidget, delay),
     );
 
     return () => {
@@ -103,14 +127,15 @@ export default function AskNoBS() {
     const widget = window.leadConnector?.chatWidget;
     if (!widget?.openWidget) return;
 
-    if (open) {
+    const isWidgetOpen = widget.isActive?.() ?? open;
+    if (isWidgetOpen) {
       widget.closeWidget?.();
       setOpen(false);
     } else {
       widget.openWidget();
       setOpen(true);
     }
-    window.setTimeout(hideLeadConnectorLauncher, 100);
+    window.setTimeout(customizeLeadConnectorWidget, 100);
   }, [open]);
 
   return (
