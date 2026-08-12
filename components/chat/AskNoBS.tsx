@@ -124,7 +124,7 @@ export default function AskNoBS() {
 
       <button
         onClick={() => setOpen(!open)}
-        className="ask-nobs-fab group relative grid h-[88px] w-[88px] cursor-pointer place-items-center overflow-hidden rounded-full border-2 border-white/25 bg-white/[.06] shadow-[0_18px_60px_rgba(0,0,0,.55),0_0_28px_rgba(46,168,255,.22)] backdrop-blur-md transition-transform duration-300 hover:-translate-y-1 hover:scale-105 hover:border-electric/70"
+        className="ask-nobs-fab group relative grid h-[76px] w-[76px] cursor-pointer place-items-center overflow-hidden rounded-full border-2 border-white/25 bg-white/[.06] shadow-[0_18px_60px_rgba(0,0,0,.55),0_0_28px_rgba(46,168,255,.22)] backdrop-blur-md transition-transform duration-300 hover:-translate-y-1 hover:scale-105 hover:border-electric/70"
         aria-label={open ? "Close Ask No BS" : "Open Ask No BS"}
         aria-expanded={open}
       >
