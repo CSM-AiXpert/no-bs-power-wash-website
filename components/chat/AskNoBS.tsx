@@ -23,16 +23,24 @@ function hideLeadConnectorLauncher() {
     ".lc-widget-launcher",
     ".ghl-chat-bubble",
     ".lc-chat-widget-launcher",
+    ".lc_text-widget--bubble",
     "[class*='chat-launcher']",
   ];
 
-  for (const selector of selectors) {
-    document.querySelectorAll<HTMLElement>(selector).forEach((element) => {
-      element.style.setProperty("display", "none", "important");
-      element.style.setProperty("visibility", "hidden", "important");
-      element.style.setProperty("pointer-events", "none", "important");
+  const hideInside = (root: Document | ShadowRoot) => {
+    for (const selector of selectors) {
+      root.querySelectorAll<HTMLElement>(selector).forEach((element) => {
+        element.style.setProperty("display", "none", "important");
+        element.style.setProperty("visibility", "hidden", "important");
+        element.style.setProperty("pointer-events", "none", "important");
+      });
+    }
+    root.querySelectorAll<HTMLElement>("*").forEach((element) => {
+      if (element.shadowRoot) hideInside(element.shadowRoot);
     });
-  }
+  };
+
+  hideInside(document);
 }
 
 export default function AskNoBS() {
