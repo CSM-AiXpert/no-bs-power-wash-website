@@ -3,9 +3,8 @@ import { Mulish, JetBrains_Mono, Barlow_Condensed } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/layout/Nav";
 import Footer from "@/components/layout/Footer";
-import GlobalShader from "@/components/webgl/GlobalShader";
+import DeferredChrome from "@/components/layout/DeferredChrome";
 import { site } from "@/lib/data/site";
-import AskNoBS from "@/components/chat/AskNoBS";
 import StickyCommunities from "@/components/sections/StickyCommunities";
 import ScrollProgress from "@/components/motion/ScrollProgress";
 
@@ -75,8 +74,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="min-h-screen bg-ink text-white antialiased">
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
-        {/* Global kinetic shader: fixed behind every page, variant routed per path */}
-        <GlobalShader />
+        {/* Global kinetic shader + chat launcher deferred after first paint */}
+        <DeferredChrome />
         <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[60] focus:rounded focus:bg-electric focus:px-4 focus:py-2 focus:text-ink">
           Skip to content
         </a>
@@ -84,7 +83,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <ScrollProgress />
         <main id="main" className="relative">{children}</main>
         <Footer />
-        <AskNoBS />
         <StickyCommunities />
       </body>
     </html>

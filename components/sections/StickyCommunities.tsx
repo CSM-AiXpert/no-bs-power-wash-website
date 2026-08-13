@@ -6,7 +6,7 @@ export default function StickyCommunities() {
   const row = [...communities, ...communities];
 
   return (
-    <aside className="fixed inset-x-0 bottom-0 z-[80] h-[46px] overflow-hidden border-t border-white/15 bg-[#04070c]/92 backdrop-blur-xl" aria-label="Communities that trust No BS">
+    <aside className="fixed inset-x-0 bottom-0 z-[80] h-[46px] overflow-hidden border-t border-white/15 bg-[#04070c]" aria-label="Communities that trust No BS">
       <div className="flex h-full items-center">
       <div className="relative z-10 hidden h-full shrink-0 items-center gap-2 border-r border-white/15 bg-[#070b12] px-3 sm:flex sm:px-5">
           <ShieldCheck className="h-4 w-4 text-signal" aria-hidden="true" />

@@ -209,7 +209,7 @@ export default function HomePage() {
             <Reveal key={p.slug} delay={i * 0.06}>
               <Link href={`/blog/${p.slug}`} className="group flex h-full cursor-pointer flex-col overflow-hidden rounded-2xl border glass transition-colors duration-200 hover:border-electric/60 lift">
                 <div className="relative aspect-[16/9] overflow-hidden">
-                  <Image src={`/results/${p.image}`} alt={p.imageAlt} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover transition-transform duration-500 group-hover:scale-105" />
+                  <Image src={`/results/${p.image}`} alt={p.imageAlt} fill sizes="(max-width: 768px) 100vw, 400px" quality={60} className="object-cover transition-transform duration-500 group-hover:scale-105" />
                 </div>
                 <div className="flex flex-1 flex-col p-5">
                   <p className="eyebrow">{p.service} &middot; {p.dateLabel}</p>
